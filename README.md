@@ -5,6 +5,7 @@
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=flat&logo=jetpackcompose&logoColor=white)
 ![Room](https://img.shields.io/badge/Room-3DDC84?style=flat&logo=android&logoColor=white)
+[![CI](https://github.com/PresidenteOG/fiber-device-manager/actions/workflows/ci.yml/badge.svg)](https://github.com/PresidenteOG/fiber-device-manager/actions/workflows/ci.yml)
 
 Android admin console for a managed device fleet. Sign in, browse every registered device
 with its state and payment status, open one to rename it, block it or renew its
@@ -33,6 +34,15 @@ The first launch writes 21 invented devices into the database, spread across eve
 UI can show — allowed, blocked and pending; payment active, expiring, overdue and unset — so
 the list, the summary counters and the detail screens all have something in them. None of it
 is real customer data.
+
+## Tests
+
+```
+./gradlew testDebugUnitTest
+```
+
+11 JVM unit tests check the payment-status and revenue rules on a device and the shape of the
+seed data. CI runs them and builds the debug APK on every push.
 
 ## Install
 
